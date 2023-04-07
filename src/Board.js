@@ -70,9 +70,13 @@ function Board({ nrows, ncols, chanceLightStartsOn }) {
       };
 
       // TODO: Make a (deep) copy of the oldBoard
-      let boardCopy = oldBoard.map(x => x);
+      let boardCopy = oldBoard.map(row => [...row]);
       // TODO: in the copy, flip this cell and the cells around it
-      boardCopy[y][x + 1] = 1;
+      flipCell(y, x, boardCopy);
+      flipCell(y, x - 1, boardCopy);
+      flipCell(y, x + 1, boardCopy);
+      flipCell(y - 1, x, boardCopy);
+      flipCell(y + 1, x, boardCopy);
 
       // TODO: return the copy
     });
