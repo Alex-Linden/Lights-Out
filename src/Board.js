@@ -79,6 +79,7 @@ function Board({ nrows, ncols, chanceLightStartsOn }) {
       flipCell(y + 1, x, boardCopy);
 
       // TODO: return the copy
+      return boardCopy
     });
   }
 
